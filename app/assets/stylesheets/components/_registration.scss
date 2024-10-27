@@ -1,0 +1,35 @@
+.registration {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: var(--space-l);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-large);
+  
+    &__header {
+      font-size: var(--font-size-xxl);
+      color: var(--color-primary);
+      margin-bottom: var(--space-m);
+      text-align: center;
+    }
+  
+    &__actions {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-m);
+    }
+  
+    // Additional styles specific to registration inputs
+    &__input--email,
+    &__input--password {
+      background-color: var(--color-white);
+      border-color: var(--color-light);
+      color: var(--color-text-body);
+  
+      &::placeholder {
+        color: var(--color-text-muted);
+        opacity: 0.8;
+      }
+    }
+  }
+  

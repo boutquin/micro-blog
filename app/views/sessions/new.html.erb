@@ -1,11 +1,37 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<%# app/views/sessions/new.html.erb %>
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
-<% end %>
-<br>
+<div class="session">
+  <h1 class="session__header">
+    Sign in
+  </h1>
 
-<%= link_to "Forgot password?", new_password_path %>
+  <%= simple_form_for @user, url: session_path, html: { class: "session__form" } do |f| %>
+    <%= form_error_notification(@user) %>
+
+    <div class="session__group">
+      <%= f.input :email_address,
+                  required: true,
+                  autofocus: true,
+                  autocomplete: "username",
+                  placeholder: "Enter your email address",
+                  input_html: { class: "session__input session__input--email" } %>
+    </div>
+
+    <div class="session__group">
+      <%= f.input :password,
+                  required: true,
+                  autocomplete: "current-password",
+                  placeholder: "Enter your password",
+                  maxlength: 72,
+                  input_html: { class: "session__input session__input--password" } %>
+    </div>
+
+    <div class="session__actions">
+      <%= f.submit "Sign in", class: "btn btn--primary" %>
+    </div>
+  <% end %>
+
+  <div class="session__footer">
+    <%= link_to "Forgot password?", new_password_path, class: "session__link" %>
+  </div>
+</div>

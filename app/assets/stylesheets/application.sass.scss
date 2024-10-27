@@ -19,6 +19,10 @@
 @use "components/flash";
 @use "components/empty_state";
 @use "components/line_item_date";
+@use "components/landing";
+@use "components/dashboard";
+@use "components/registration";
+@use "components/session";
 
 // Layouts
 @use "layouts/container";

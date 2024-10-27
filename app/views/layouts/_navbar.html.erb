@@ -1,0 +1,31 @@
+<%# app/views/shared/_navbar.html.erb %>
+
+<header class="navbar">
+  <div class="navbar__brand">
+    <%= link_to "Micro Blog", root_path, class: "navbar__brand-link" %>
+  </div>
+
+  <nav class="navbar__nav">
+    <ul class="navbar__list">
+      <li class="navbar__item"><%= link_to "Home", root_path, class: "navbar__link" %></li>
+      <li class="navbar__item"><%= link_to "Dashboard", dashboard_path, class: "navbar__link" %></li>
+      <% if authenticated? %>
+        <li class="navbar__name">
+          <%= Current.user.name %>
+        </li>
+        <li class="navbar__item">
+          <%= button_to "Sign out",
+                        session_path,
+                        method: :delete,
+                        class: "btn btn--dark" %>
+        </li>
+      <% else %>
+        <li class="navbar__item navbar__item--right">
+          <%= link_to "Sign in",
+                      new_session_path,
+                      class: "btn btn--dark" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

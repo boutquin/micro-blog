@@ -1,0 +1,25 @@
+# config/locales/simple_form.en.yml
+
+en:
+  simple_form:
+    labels:
+      user:
+        email_address: "Email Address"
+        password: "Password"
+      registration:
+        email_address: "Email Address"
+        password: "Password"
+    hints:
+      user:
+        email_address: "We'll never share your email with anyone else."
+        password: "Minimum 8 characters."
+    placeholders:
+      user:
+        email_address: "Enter your email address"
+        password: "Create a password"
+    buttons:
+      submit: "Sign up"
+    errors:
+      format: "%{attribute} %{message}"
+      required: "is required"
+      not_a_number: "must be a number"
