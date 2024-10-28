@@ -9,7 +9,9 @@
     <nav class="navbar__nav">
       <ul class="navbar__list">
         <li class="navbar__item"><%= link_to "Home", root_path, class: "navbar__link" %></li>
-        <li class="navbar__item"><%= link_to "Dashboard", dashboard_path, class: "navbar__link" %></li>
+        <% if authenticated? %>
+          <li class="navbar__item"><%= link_to "Dashboard", dashboard_path, class: "navbar__link" %></li>
+        <% end %>
       </ul>
 
       <ul class="navbar__list navbar__list--right">
