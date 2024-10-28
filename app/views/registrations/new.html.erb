@@ -1,0 +1,37 @@
+<div class="registration">
+  <h1 class="registration__header">
+    Sign up
+  </h1>
+
+  <%= simple_form_for @user, url: registration_path, html: { class: "registration__form" } do |f| %>
+    <%= form_error_notification(@user) %>
+
+    <%= f.input :email_address,
+                required: true,
+                autofocus: true,
+                autocomplete: "email",
+                placeholder: "Enter your email address" %>
+
+    <%= f.input :password,
+                required: true,
+                autocomplete: "new-password",
+                placeholder: "Create a password",
+                maxlength: 72 %>
+
+    <%= f.input :password_confirmation,
+                required: true,
+                autocomplete: "new-password",
+                placeholder: "Confirm your password",
+                maxlength: 72 %>
+
+    <div class="form__actions">
+      <%= f.submit "Sign up", class: "btn btn--primary" %>
+    </div>
+  <% end %>
+
+  <div class="registration__footer">
+    <p class="registration__footer-text">
+      Already have an account? <%= link_to "Sign in", new_session_path, class: "registration__footer__link" %>
+    </p>
+  </div>
+</div>

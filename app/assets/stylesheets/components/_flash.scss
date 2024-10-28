@@ -1,25 +1,33 @@
 .flash {
-    position:fixed;
-    top: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-s);
-  
-    max-width: 100%;
-    width: max-content;
-    padding: 0 var(--space-m);
-  
-    &__message {
-      font-size: var(--font-size-s);
-      color: var(--color-white);
-      padding: var(--space-xs) var(--space-m);
-      background-color: var(--color-dark);
-      animation: appear-then-fade 4s both;
-      border-radius: 999px;
-    }
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+  max-width: 90%;
+  width: fit-content;
+  padding: var(--space-xs) var(--space-m);
+  z-index: 1000;
+
+  &__message {
+    font-size: var(--font-size-m); // Slightly larger for readability
+    color: var(--color-white);
+    padding: var(--space-s) var(--space-l);
+    background-color: var(--color-dark);
+    animation: appear-then-fade 5s ease-in-out both;
+    border-radius: 999px;
+    text-align: center;
+    box-shadow: var(--shadow-small); // Adds depth
+    opacity: 0.9; // Slight transparency for softer appearance
   }
-  
+}
+
+// Smooth animation for flash messages
+@keyframes appear-then-fade {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10%, 90% { opacity: 0.9; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}

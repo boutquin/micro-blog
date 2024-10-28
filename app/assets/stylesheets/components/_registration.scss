@@ -1,35 +1,91 @@
+/* _registration.scss */
+
 .registration {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: var(--space-l);
-    background-color: var(--color-light);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-large);
-  
-    &__header {
-      font-size: var(--font-size-xxl);
-      color: var(--color-primary);
-      margin-bottom: var(--space-m);
-      text-align: center;
-    }
-  
-    &__actions {
-      display: flex;
-      justify-content: center;
-      margin-top: var(--space-m);
-    }
-  
-    // Additional styles specific to registration inputs
-    &__input--email,
-    &__input--password {
-      background-color: var(--color-white);
-      border-color: var(--color-light);
+  max-width: 400px;
+  margin: 0 auto;
+  padding: var(--space-l) var(--space-m);
+  background-color: var(--color-white);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-large);
+
+  &__header {
+    font-size: var(--font-size-xxl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-l);
+    text-align: center;
+  }
+
+  &__form {
+    // The form styles are defined in the `.form` block
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: var(--space-m);
+
+    &-text {
+      font-size: var(--font-size-s);
       color: var(--color-text-body);
-  
-      &::placeholder {
-        color: var(--color-text-muted);
-        opacity: 0.8;
+    }
+
+    &__link {
+      color: var(--color-primary);
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--color-primary-rotate);
       }
     }
   }
-  
+}
+
+/* Reuse form styles from _form.scss */
+
+.form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-m);
+  }
+
+  &__label {
+    margin-bottom: var(--space-xs);
+    font-size: var(--font-size-m);
+    color: var(--color-text-body);
+  }
+
+  &__input {
+    width: 100%;
+    padding: var(--space-s);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-light);
+    font-size: var(--font-size-m);
+    outline: none;
+    transition: box-shadow 0.3s ease;
+
+    &:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px var(--color-glint);
+    }
+  }
+
+  &__hint {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-xxs);
+    line-height: var(--line-height-body);
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-m);
+  }
+
+  &__error {
+    color: var(--color-error);
+    margin-bottom: var(--space-m);
+  }
+}

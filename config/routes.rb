@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   ##############################
   # Custom routes
   ##############################
+  # Defines the path foe new user registration
+  resource :registration, only: %i[new create]
   # Defines the path for the dashboard page
   resource :dashboard, only: :show
 end

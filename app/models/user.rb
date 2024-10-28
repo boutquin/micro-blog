@@ -3,4 +3,8 @@ class User < ApplicationRecord
   has_many :sessions, dependent: :destroy
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
+
+  validates :email_address, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 8 }, confirmation: true
+  validates :password_confirmation, presence: true
 end

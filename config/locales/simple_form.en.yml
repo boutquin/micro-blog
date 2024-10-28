@@ -6,19 +6,19 @@ en:
       user:
         email_address: "Email Address"
         password: "Password"
-      registration:
-        email_address: "Email Address"
-        password: "Password"
+        password_confirmation: "Confirm Password"
     hints:
       user:
-        email_address: "We'll never share your email with anyone else."
-        password: "Minimum 8 characters."
+        email_address: "We’ll never share your email with anyone."
+        password: "Your password should be at least 8 characters."
+        password_confirmation: "Enter the same password as above."
     placeholders:
       user:
         email_address: "Enter your email address"
         password: "Create a password"
+        password_confirmation: "Confirm your password"
     buttons:
-      submit: "Sign up"
+      submit: "Submit"
     errors:
       format: "%{attribute} %{message}"
       required: "is required"

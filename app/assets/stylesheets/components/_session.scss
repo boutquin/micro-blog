@@ -1,3 +1,5 @@
+/* _session.scss */
+
 .session {
   max-width: 400px;
   margin: 0 auto;
@@ -15,50 +17,21 @@
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m); // Adds space between fields for readability
-  }
-
-  &__group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  &__input {
-    width: 100%;
-    padding: var(--space-xxs) var(--space-s);
-    border: var(--border);
-    border-radius: var(--border-radius);
-    background-color: var(--color-light);
-    font-size: var(--font-size-m);
-    outline: none;
-    transition: box-shadow 0.3s ease;
-
-    &:focus {
-      box-shadow: 0 0 0 2px var(--color-glint);
-    }
-  }
-
-  &__actions {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--space-m);
+    // No additional styles needed here; form styles are defined under the `.form` block
   }
 
   &__footer {
     text-align: center;
     margin-top: var(--space-m);
-  }
 
-  &__link {
-    color: var(--color-primary);
-    font-size: var(--font-size-s);
-    text-decoration: underline;
+    &__link {
+      color: var(--color-primary);
+      font-size: var(--font-size-s);
+      text-decoration: underline;
 
-    &:hover {
-      color: var(--color-primary-rotate);
+      &:hover {
+        color: var(--color-primary-rotate);
+      }
     }
   }
 }
