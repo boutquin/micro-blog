@@ -16,12 +16,12 @@ class SessionsController < ApplicationController
       start_new_session_for user
       redirect_to after_authentication_url
     else
-      redirect_to new_session_url, alert: "Try another email address or password."
+      redirect_to sign_in_url, alert: "Try another email address or password."
     end
   end
 
   def destroy
     terminate_session
-    redirect_to new_session_url
+    redirect_to root_url, notice: "You have been signed out."
   end
 end

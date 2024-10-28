@@ -19,19 +19,19 @@
           </li>
           <li class="navbar__item">
             <%= button_to "Sign out",
-                          session_path,
+                          sign_out_path,
                           method: :delete,
                           class: "btn btn--dark" %>
           </li>
         <% else %>
           <li class="navbar__item">
             <%= link_to "Sign in",
-                        new_session_path,
+                        sign_in_path,
                         class: "btn btn--dark" %>
           </li>
           <li class="navbar__item">
             <%= link_to "Sign up",
-                        new_registration_path,
+                        sign_up_path,
                         class: "btn btn--primary" %>
           </li>
         <% end %>

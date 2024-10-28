@@ -15,6 +15,16 @@ Rails.application.routes.draw do
   root "pages#home"
 
   ##############################
+  # Map authentication routes to
+  # the appropriate controller
+  ##############################
+  get  "sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"
+  get  "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
+  delete "sign_out", to: "sessions#destroy"
+
+  ##############################
   # Custom routes
   ##############################
   # Defines the path foe new user registration
