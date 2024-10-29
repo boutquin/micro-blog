@@ -21,7 +21,6 @@ module Authentication
       resume_session || request_authentication
     end
 
-
     def resume_session
       Current.session ||= find_session_by_cookie
     end
@@ -30,16 +29,14 @@ module Authentication
       Session.find_by(id: cookies.signed[:session_id])
     end
 
-
     def request_authentication
       session[:return_to_after_authenticating] = request.url
       redirect_to sign_in_url, alert: "You must sign in first."
     end
 
     def after_authentication_url
-      session.delete(:return_to_after_authenticating) || root_url
+      session.delete(:return_to_after_authenticating) || dashboard_url
     end
-
 
     def start_new_session_for(user)
       user.sessions.create!(user_agent: request.user_agent, ip_address: request.remote_ip).tap do |session|
